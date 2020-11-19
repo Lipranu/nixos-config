@@ -21,7 +21,7 @@
 
   outputs = inputs: {
 
-    inspiron = inputs.nixpkgs-stable.lib.nixosSystem {
+    inspiron = inputs.nixpkgs-unstable.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         (import ./src/configuration.nix)
