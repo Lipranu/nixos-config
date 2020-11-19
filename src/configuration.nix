@@ -14,6 +14,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = "experimental-features = nix-command flakes";
+  };
+
   networking = { 
     hostName = "inspiron";
     wireless = {
