@@ -48,7 +48,45 @@
   #   keyMap = "us";
   # };
 
-  
+  console.useXkbConfig = true;
+
+  services = {
+
+    printing.enable = true;
+
+    xserver = {
+      enable = true;
+      layout = "us, ru";
+      xkbOptions = "ctrl:swapcaps, grp:alt_shift_toogle";
+      extraConfig =
+        ''
+          Section "Extensions"
+              Option "Composite" "enable"
+          EndSection
+        '';
+
+      desktopManager = {
+        xterm.enable = true;
+        xfce = {
+          enable = true;
+          noDesktop = true;
+          enableXfwm = false;
+        };
+      };
+
+      windowManager.xmonad.enable = true;
+
+      displayManager = {
+        defaultSession = "xfce+xmonad";
+        autoLogin = {
+          enable = true;
+          user = "lipranu";
+        };
+      };
+
+    };
+
+  };  
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -75,7 +113,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
-    vim
+    neovim
+    xterm
     firefox
     git
     gnumake
