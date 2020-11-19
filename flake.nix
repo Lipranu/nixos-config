@@ -1,11 +1,33 @@
 {
-  description = "A very basic flake";
+  description = "My nixos configuration";
 
-  outputs = { self, nixpkgs }: {
+  inputs = {
 
-    packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
+    nixpkgs-unstable = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-unstable";
+    };
 
-    defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
+    nixpkgs-stable = {
+      type = "github";
+      owner = "nixos";
+      repo = "nixpkgs";
+      ref = "nixos-20.09";
+    };
+
+  };
+
+  outputs = inputs: {
+
+    inspiron = inputs.nixpkgs-stable.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        (import ./src/configuration.nix)
+      ];
+      specialArgs = { inherit inputs; };
+    };
 
   };
 }
