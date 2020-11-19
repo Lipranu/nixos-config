@@ -20,14 +20,16 @@
   };
 
   outputs = inputs: {
+    nixosConfigurations = {
 
-    inspiron = inputs.nixpkgs-unstable.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        (import ./src/configuration.nix)
-      ];
-      specialArgs = { inherit inputs; };
+      inspiron = inputs.nixpkgs-unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          (import ./src/configuration.nix)
+        ];
+        specialArgs = { inherit inputs; };
+      };
+
     };
-
   };
 }
