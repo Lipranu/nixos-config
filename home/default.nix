@@ -4,7 +4,10 @@
   
   home-manager.users.lipranu = rec {
 
-    home.homeDirectory = "/home/lipranu";
+    home = {
+      homeDirectory = "/home/lipranu";
+      stateVersion = "20.09";
+    };
 
     programs.git = {
       enable = true;
