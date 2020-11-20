@@ -21,6 +21,21 @@
 
     };
 
+    xdg = {
+      
+      dataHome = "${home.homeDirectory}/.local/share";
+      configHome = "${home.homeDirectory}/.config";
+
+      userDirs = {
+        enable = true;
+	documents = "${home.homeDirectory}/docs";
+	download = "${home.homeDirectory}/dl";
+	music = "${home.homeDirectory}/music";
+	pictures = "${home.homeDirectory}/pics";
+      };
+
+    };
+
     systemd.user.startServices = true;
 
     xsession = {
