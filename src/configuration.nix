@@ -27,8 +27,9 @@
     };
   };
 
-  # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  fonts.fontconfig.defaultFonts.monospace = ["Iosevka"];
+
+  time.timeZone = "Europe/Amsterdam";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -56,14 +57,14 @@
 
     xserver = {
       enable = true;
-      layout = "us, ru";
-      xkbOptions = "ctrl:swapcaps, grp:alt_shift_toogle";
-      extraConfig =
-        ''
-          Section "Extensions"
-              Option "Composite" "enable"
-          EndSection
-        '';
+      layout = "us,ru";
+      xkbOptions = "ctrl:swapcaps,grp:alt_shift_toogle";
+#      extraConfig =
+#        ''
+#          Section "Extensions"
+#              Option "Composite" "enable"
+#          EndSection
+#        '';
 
       desktopManager = {
         xterm.enable = true;
