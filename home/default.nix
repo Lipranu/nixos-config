@@ -5,8 +5,15 @@
   home-manager.users.lipranu = rec {
 
     home = {
+      
       homeDirectory = "/home/lipranu";
       stateVersion = "20.09";
+      
+      keyboard = {
+        layout = "us,ru";
+	options = ["ctrl:swapcaps" "grp:alt_shift_toogle"];
+      };
+
     };
 
     programs.git = {
