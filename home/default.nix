@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
@@ -14,6 +15,17 @@
 	options = ["ctrl:swapcaps" "grp:alt_shift_toogle"];
       };
 
+      packages = with pkgs; [
+        termonad-with-packages
+      ];
+
+    };
+
+    systemd.user.startServices = true;
+
+    xsession = {
+      enable = true;
+      windowManager.xmonad.enable = true;
     };
 
     programs.git = {
