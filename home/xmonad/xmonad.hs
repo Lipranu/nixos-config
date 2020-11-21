@@ -320,13 +320,13 @@ myLogHook = fadeOutLogHook $ isUnfocusedOnCurrentWS <||> isUnfocused
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = do
-  spawnOnce "xcompmgr -cCfF &"
-  spawnOnce "feh --bg-fill --no-fehbg ~/.wallpaper &"
+myStartupHook = pure ()--do
+--  spawnOnce "xcompmgr -cCfF &"
+--  spawnOnce "feh --bg-fill --no-fehbg ~/.wallpaper &"
 
 ------------------------------------------------------------------------
 
-main = spawnPipe "xmobar /home/lipranu/.xmobarrc"
+main = spawnPipe "xmobar"
    >>= xmonad . docks . myXmonad
 
 myXmonad :: Handle -> XConfig MyLayout

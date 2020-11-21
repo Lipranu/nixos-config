@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
+   ./xmobar.nix
    (import ./termonad)
    (import ./xmonad)
   ];
@@ -22,6 +23,7 @@
 
       packages = with pkgs; [
         termonad-with-packages
+	xmobar
       ];
 
     };
