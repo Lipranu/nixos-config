@@ -5,6 +5,7 @@
    ./picom.nix
    (import ./termonad)
    (import ./xmonad)
+   (import ./emacs)
   ];
 
   home-manager.useGlobalPkgs = true;
