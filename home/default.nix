@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+   (import ./termonad)
+  ];
+
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   
