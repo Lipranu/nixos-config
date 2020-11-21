@@ -17,7 +17,7 @@
       
       keyboard = {
         layout = "us,ru";
-	options = ["ctrl:swapcaps" "grp:alt_shift_toogle"];
+	options = ["grp:alt_shift_toggle" "ctrl:swapcaps"];
       };
 
       packages = with pkgs; [
