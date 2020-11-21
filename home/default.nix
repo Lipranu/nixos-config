@@ -25,6 +25,7 @@
       packages = with pkgs; [
         termonad-with-packages
 	xmobar
+	ranger
       ];
 
     };
