@@ -56,6 +56,7 @@
       enable = true;
     };
 
+    programs.zathura.enable = true;
     programs.git = {
       enable = true;
       userEmail = "lipranu@gmail.com";
