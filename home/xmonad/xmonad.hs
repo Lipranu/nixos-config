@@ -309,8 +309,9 @@ myEventHook = fullscreenEventHook
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
 myLogHook :: X ()
-myLogHook = fadeOutLogHook $ isUnfocusedOnCurrentWS <||> isUnfocused
-  <&> bool 1 0.8
+myLogHook = pure ()
+--  fadeOutLogHook $ isUnfocusedOnCurrentWS <||> isUnfocused
+--  <&> bool 1 0.8
 
 ------------------------------------------------------------------------
 -- Startup hook

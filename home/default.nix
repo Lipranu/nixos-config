@@ -2,6 +2,7 @@
 {
   imports = [
    ./xmobar.nix
+   ./picom.nix
    (import ./termonad)
    (import ./xmonad)
   ];
