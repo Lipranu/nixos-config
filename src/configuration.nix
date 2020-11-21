@@ -27,7 +27,12 @@
     };
   };
 
-  fonts.fontconfig.defaultFonts.monospace = ["Iosevka"];
+  fonts = {
+    fontconfig.defaultFonts.monospace = ["Iosevka"];
+    fontDir.enable = true;
+
+    fonts = with pkgs; [iosevka];
+  };
 
   time.timeZone = "Europe/Amsterdam";
 
