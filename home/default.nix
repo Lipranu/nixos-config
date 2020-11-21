@@ -2,6 +2,7 @@
 {
   imports = [
    (import ./termonad)
+   (import ./xmonad)
   ];
 
   home-manager.useGlobalPkgs = true;
@@ -44,7 +45,6 @@
 
     xsession = {
       enable = true;
-      windowManager.xmonad.enable = true;
     };
 
     programs.git = {
