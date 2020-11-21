@@ -47,66 +47,40 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  # };
-
-  console.useXkbConfig = true;
-
   services = {
 
     printing.enable = true;
 
     xserver = {
+
       enable = true;
-      layout = "us,ru";
-      xkbOptions = "ctrl:swapcaps,grp:alt_shift_toogle";
-#      extraConfig =
-#        ''
-#          Section "Extensions"
-#              Option "Composite" "enable"
-#          EndSection
-#        '';
-
-      desktopManager = {
-        xterm.enable = true;
-        xfce = {
-          enable = true;
-          noDesktop = true;
-          enableXfwm = false;
-        };
-      };
-
-      windowManager.xmonad.enable = true;
+      libinput.enable = true;
 
       displayManager = {
-        defaultSession = "xfce+xmonad";
+
+        defaultSession = "xsession";
+
+	session = [{
+	  manage = "desktop";
+	  name = "xsession";
+	  start = "";
+	}];
+
         autoLogin = {
           enable = true;
           user = "lipranu";
         };
+
       };
 
     };
 
   };  
 
-  # Configure keymap in X11
-  # services.xserver.layout = "us";
-  # services.xserver.xkbOptions = "eurosign:e";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lipranu = {
