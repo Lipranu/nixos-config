@@ -5,6 +5,7 @@
     ./xmobar.nix
     (import ./emacs)
     (import ./neovim)
+    (import ./ranger)
     (import ./termonad)
     (import ./xmonad)
   ];
