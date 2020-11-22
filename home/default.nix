@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
-
+{
   imports = [
-   ./xmobar.nix
-   ./picom.nix
-   (import ./termonad)
-   (import ./xmonad)
-   (import ./emacs)
+    ./packages.nix
+    ./picom.nix
+    ./xmobar.nix
+    (import ./emacs)
+    (import ./termonad)
+    (import ./xmonad)
   ];
 
   home-manager = {
@@ -22,12 +22,6 @@
           layout = "us,ru";
   	      options = ["grp:alt_shift_toggle" "ctrl:swapcaps"];
         };
-
-        packages = with pkgs; [
-          termonad-with-packages
-  	      xmobar
-  	      ranger
-        ];
 
       };
 
