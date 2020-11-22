@@ -2,36 +2,29 @@
   imports = [
     ./fonts.nix
     ./network.nix
+    ./nix.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = "experimental-features = nix-command flakes";
-  };
-
   time.timeZone = "Asia/Novosibirsk";
 
   services = {
-
     printing.enable = true;
 
     xserver = {
-
       enable = true;
       libinput.enable = true;
 
       displayManager = {
-
         defaultSession = "xsession";
 
-	session = [{
-	  manage = "desktop";
-	  name = "xsession";
-	  start = "";
-	}];
+	      session = [{
+	        manage = "desktop";
+	        name = "xsession";
+	        start = "";
+	      }];
 
         autoLogin = {
           enable = true;
