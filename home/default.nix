@@ -1,6 +1,7 @@
 {
   imports = [
     ./chromium.nix
+    ./direnv.nix
     ./firefox.nix
     ./packages.nix
     ./picom.nix
