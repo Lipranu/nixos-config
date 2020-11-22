@@ -46,9 +46,12 @@
 
       systemd.user.startServices = true;
 
-      services.random-background = {
-        enable = true;
-        imageDirectory = "${xdg.userDirs.pictures}/wallpapers";
+      services = {
+        lorri.enable = true;
+        random-background = {
+          enable = true;
+          imageDirectory = "${xdg.userDirs.pictures}/wallpapers";
+        };
       };
 
       xsession.enable = true;
