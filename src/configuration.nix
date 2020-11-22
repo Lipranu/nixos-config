@@ -95,7 +95,6 @@
     wget
     neovim
     xterm
-    firefox
     git
     gnumake
   ];

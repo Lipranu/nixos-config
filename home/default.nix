@@ -1,5 +1,6 @@
 {
   imports = [
+    ./firefox.nix
     ./packages.nix
     ./picom.nix
     ./xmobar.nix
