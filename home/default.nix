@@ -4,6 +4,7 @@
     ./picom.nix
     ./xmobar.nix
     (import ./emacs)
+    (import ./neovim)
     (import ./termonad)
     (import ./xmonad)
   ];
