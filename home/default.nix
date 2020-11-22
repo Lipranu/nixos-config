@@ -3,6 +3,7 @@
     ./chromium.nix
     ./direnv.nix
     ./firefox.nix
+    ./git.nix
     ./packages.nix
     ./picom.nix
     ./xmobar.nix
@@ -18,6 +19,11 @@
     useUserPackages = true;
 
     users.lipranu = rec {
+      systemd.user.startServices = true;
+
+      xsession.enable = true;
+
+      programs.zathura.enable = true;
 
       home = {
         homeDirectory = "/home/lipranu";
@@ -44,8 +50,6 @@
 
       };
 
-      systemd.user.startServices = true;
-
       services = {
         lorri.enable = true;
         random-background = {
@@ -53,10 +57,6 @@
           imageDirectory = "${xdg.userDirs.pictures}/wallpapers";
         };
       };
-
-      xsession.enable = true;
-
-      programs.zathura.enable = true;
 
     };
   };

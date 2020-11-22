@@ -5,10 +5,15 @@
     ./nix.nix
   ];
 
+  system.stateVersion = "20.09";
+
+  time.timeZone = "Asia/Novosibirsk";
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  time.timeZone = "Asia/Novosibirsk";
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   services = {
     printing.enable = true;
@@ -37,28 +42,11 @@
 
   };
 
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.lipranu = {
     isNormalUser = true;
     home = "/home/lipranu";
     extraGroups = [ "wheel" ];
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    wget
-    neovim
-    xterm
-    git
-    gnumake
-  ];
-
-  system.stateVersion = "20.09";
 }
 
