@@ -6,8 +6,7 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+    [
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -19,7 +18,7 @@
     extraOptions = "experimental-features = nix-command flakes";
   };
 
-  networking = { 
+  networking = {
     hostName = "inspiron";
     wireless = {
       enable = true;

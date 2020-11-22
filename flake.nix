@@ -31,13 +31,13 @@
 
       inspiron = inputs.nixpkgs-unstable.lib.nixosSystem {
         system = "x86_64-linux";
-        modules = [
-          (import ./src/configuration.nix)
-
-	  inputs.home-manager.nixosModules.home-manager
-	  (import ./home)
-        ];
         specialArgs = { inherit inputs; };
+        modules = [
+	        (import ./home)
+          (import ./hardware/inspiron.nix)
+          (import ./src/configuration.nix)
+	        inputs.home-manager.nixosModules.home-manager
+        ];
       };
 
     };
