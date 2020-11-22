@@ -35,7 +35,7 @@
         modules = [
 	        (import ./home)
           (import ./hardware/inspiron.nix)
-          (import ./src/configuration.nix)
+          (import ./system)
 	        inputs.home-manager.nixosModules.home-manager
         ];
       };
