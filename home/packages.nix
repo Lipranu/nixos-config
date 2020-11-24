@@ -3,6 +3,7 @@
   	ranger
   	xmobar
     gnumake
+    libreoffice
     tdesktop
     termonad-with-packages
     wget
