@@ -5,6 +5,7 @@
       "bihmplhobchoageeokmgbdihknkjbknd" # Touch VPN
       "cjpalhdlnbpafiamejdnhcphjbkeiagm" # uBlock Origin
       "gcbommkclmclpchllfjekcdonpmejbdp" # HTTPS Everywhere
+      "dbepggeogbaibhgnhhndojpepiihcmeb" # Vimium
     ];
   };
 }
