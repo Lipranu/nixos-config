@@ -49,7 +49,7 @@
   users.users.lipranu = {
     isNormalUser = true;
     home = "/home/lipranu";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "scanner" "lp" ];
   };
 
 }
