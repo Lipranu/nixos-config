@@ -13,7 +13,11 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+
+  hardware = {
+    pulseaudio.enable = true;
+    sane.enable = true;
+  };
 
   services = {
     printing.enable = true;
