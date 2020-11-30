@@ -23,7 +23,10 @@
 
       xsession.enable = true;
 
-      programs.zathura.enable = true;
+      programs = {
+        bash.enable = true;
+        zathura.enable = true;
+      };
 
       home = {
         homeDirectory = "/home/lipranu";
