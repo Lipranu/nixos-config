@@ -4,6 +4,7 @@
   	xmobar
     ghostscript
     gnumake
+    imagemagick
     libreoffice
     tdesktop
     termonad-with-packages
