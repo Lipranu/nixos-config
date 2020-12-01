@@ -25,6 +25,7 @@
 
       programs = {
         bash.enable = true;
+        feh.enable = true;
         zathura.enable = true;
       };
 
