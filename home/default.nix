@@ -26,6 +26,7 @@
       programs = {
         bash.enable = true;
         feh.enable = true;
+        texlive.enable = true;
         zathura.enable = true;
       };
 
