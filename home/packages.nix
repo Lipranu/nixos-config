@@ -1,13 +1,14 @@
 { pkgs, ... }: {
   home-manager.users.lipranu.home.packages = with pkgs; [
-  	ranger
-  	xmobar
     ghostscript
     gnumake
     imagemagick
     libreoffice
+    ranger
     tdesktop
     termonad-with-packages
+    unzip
     wget
+    xmobar
   ];
 }
