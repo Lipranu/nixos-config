@@ -4,6 +4,8 @@
     package = pkgs.nixUnstable;
     extraOptions = "experimental-features = nix-command flakes";
 
+    trustedUsers = [ "root" "lipranu" ];
+
     binaryCaches = [
       "https://cache.nixos.org/"
       "https://nixcache.reflex-frp.org"
