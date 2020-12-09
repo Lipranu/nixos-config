@@ -14,6 +14,8 @@
 
   sound.enable = true;
 
+  nixpkgs.config = { allowUnfree = true; };
+
   hardware = {
     pulseaudio.enable = true;
     sane.enable = true;
