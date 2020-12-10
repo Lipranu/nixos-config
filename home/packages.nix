@@ -8,6 +8,7 @@
     ranger
     tdesktop
     termonad-with-packages
+    unrar
     unzip
     wget
     xmobar
