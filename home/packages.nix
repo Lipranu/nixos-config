@@ -8,6 +8,7 @@
     ranger
     tdesktop
     termonad-with-packages
+    unetbootin
     unrar
     unzip
     wget
