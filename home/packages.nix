@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home-manager.users.lipranu.home.packages = with pkgs; [
     cachix
+    freemind
     ghostscript
     gnumake
     imagemagick
