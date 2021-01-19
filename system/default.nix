@@ -16,6 +16,11 @@
 
   nixpkgs.config = { allowUnfree = true; };
 
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+  };
+
   hardware = {
     pulseaudio.enable = true;
     sane.enable = true;
@@ -48,10 +53,20 @@
 
   };
 
+  environment.systemPackages = with pkgs; [
+    virtualboxWithExtpack
+  ];
+
   users.users.lipranu = {
     isNormalUser = true;
     home = "/home/lipranu";
-    extraGroups = [ "wheel" "scanner" "lp" ];
+    extraGroups = [
+      "lp"
+      "scanner"
+      "user-with-access-to-virtualbox"
+      "vboxusers"
+      "wheel"
+    ];
   };
 
 }
