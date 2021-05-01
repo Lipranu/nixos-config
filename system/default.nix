@@ -11,6 +11,9 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  console.useXkbConfig = true;
 
   sound.enable = true;
 
@@ -20,6 +23,8 @@
     enable = true;
     enableExtensionPack = true;
   };
+
+  virtualisation.virtualbox.guest.enable = true;
 
   hardware = {
     pulseaudio.enable = true;
@@ -55,6 +60,7 @@
 
   environment.systemPackages = with pkgs; [
     virtualboxWithExtpack
+    (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ru ]))
   ];
 
   users.users.lipranu = {
