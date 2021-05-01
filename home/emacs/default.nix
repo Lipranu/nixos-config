@@ -10,6 +10,7 @@
         company
         company-nixos-options
         doom-modeline
+        elm-mode
         evil
         evil-magit
         haskell-mode
