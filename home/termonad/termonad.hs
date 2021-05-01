@@ -61,6 +61,7 @@ myOptionsConfig  = defaultConfigOptions
   , showScrollbar = ShowScrollbarAlways
   , confirmExit   = False
   , showMenu      = False
+  , boldIsBright  = False
   }
 
 myTMConfig :: TMConfig
