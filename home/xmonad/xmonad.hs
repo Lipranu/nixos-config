@@ -23,7 +23,7 @@ import XMonad.Hooks.FadeInactive    ( fadeOutLogHook
                                     , isUnfocusedOnCurrentWS
                                     )
 import XMonad.Hooks.ManageDocks     ( AvoidStruts (..), avoidStruts, docks )
-import XMonad.Util.Run              ( spawnPipe, hPutStrLn )
+import XMonad.Util.Run              ( spawnPipe, safeRunInTerm, hPutStrLn )
 import XMonad.Util.SpawnOnce        ( spawnOnce )
 
 import Data.Monoid
@@ -123,11 +123,17 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
     -- prompt
     , ((modm,               xK_f     ), shellPrompt myXPConfig)
 
+    -- launch chromium
+    , ((modm,               xK_g     ), spawn "chromium")
+
     -- launch emacs
     , ((modm,               xK_e     ), spawn "emacs")
 
     -- launch vim
-    , ((modm,               xK_v     ), spawn "vim")
+    , ((modm,               xK_v     ), safeRunInTerm "vim" mempty)
+
+    -- launch ranger
+    , ((modm,               xK_r     ), safeRunInTerm "ranger" mempty)
 
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
@@ -192,6 +198,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
+    -- Reboot
+    , ((modm .|. shiftMask, xK_r     ), spawn "reboot")
+
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
 
@@ -207,15 +216,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = Map.fromList $
     [((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(Stack.greedyView, 0), (Stack.shift, shiftMask)]]
-    ++
+--    ++
 
     --
     -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
     -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
     --
-    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-        , (f, m) <- [(Stack.view, 0), (Stack.shift, shiftMask)]]
+--    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
+--        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+--        , (f, m) <- [(Stack.view, 0), (Stack.shift, shiftMask)]]
 
 
 ------------------------------------------------------------------------
