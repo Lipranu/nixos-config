@@ -11,6 +11,7 @@
         company-nixos-options
         doom-modeline
         elm-mode
+        erlang
         evil
         evil-magit
         haskell-mode
