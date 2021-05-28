@@ -22,6 +22,7 @@
         nix-mode
         nixos-options
         projectile
+        proofgeneral
         treemacs
         treemacs-evil
         treemacs-magit
