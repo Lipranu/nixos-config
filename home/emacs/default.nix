@@ -13,7 +13,7 @@
         elm-mode
         erlang
         evil
-        evil-magit
+#        evil-magit
         haskell-mode
         helm
         helm-nixos-options
