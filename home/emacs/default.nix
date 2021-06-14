@@ -23,6 +23,7 @@
         nixos-options
         projectile
         proofgeneral
+        pdf-tools
         treemacs
         treemacs-evil
         treemacs-magit

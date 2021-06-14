@@ -113,3 +113,7 @@
 
 (use-package treemacs-magit
   :after treemacs magit)
+
+(use-package pdf-tools
+  :init
+  (pdf-tools-install))
