@@ -9,9 +9,15 @@
 
   time.timeZone = "Asia/Novosibirsk";
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot = {
+    kernelParams = [ "intel_pstate=active" ];
+    supportedFilesystems = [ "ntfs" ];
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+  };
 
   console.useXkbConfig = true;
 
