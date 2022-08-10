@@ -10,6 +10,7 @@ import Termonad.Config        ( ConfigOptions (..)
                               , ShowScrollbar (..)
                               , TMConfig (..)
                               , defaultConfigOptions
+                              , defaultFontConfig
                               , defaultTMConfig
                               )
 import Termonad.Config.Colour ( AlphaColour
@@ -18,6 +19,7 @@ import Termonad.Config.Colour ( AlphaColour
                               , addColourExtension
                               , createColour
                               , createColourExtension
+                              , defaultColourConfig
                               , defaultLightColours
                               , mkList8
                               )
@@ -29,7 +31,7 @@ myForegroundColour = createColour 228 228 232
 myBackgroundColour = createColour 24  24  27
 
 myColourConfig :: ColourConfig (AlphaColour Double)
-myColourConfig = ColourConfig
+myColourConfig = defaultColourConfig
   { cursorBgColour   = Set myCursorColour
   , cursorFgColour   = Set myBackgroundColour
   , backgroundColour = Set myBackgroundColour
@@ -50,7 +52,7 @@ mkColours = BasicPalette . fromMaybe defaultLightColours $ mkList8
   ]
 
 myFontConfig :: FontConfig
-myFontConfig = FontConfig
+myFontConfig = defaultFontConfig
   { fontFamily = "Iosevka"
   , fontSize   = FontSizePoints 13
   }
