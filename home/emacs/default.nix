@@ -22,7 +22,6 @@
         nix-mode
         nixos-options
         projectile
-        proofgeneral
         pdf-tools
         treemacs
         treemacs-evil
@@ -31,6 +30,8 @@
         use-package
         which-key
         winum
+        lua-mode
+        purescript-mode
       ];
     };
 

@@ -23,6 +23,7 @@ import XMonad.Hooks.FadeInactive    ( fadeOutLogHook
                                     , isUnfocusedOnCurrentWS
                                     )
 import XMonad.Hooks.ManageDocks     ( AvoidStruts (..), avoidStruts, docks )
+import XMonad.Hooks.EwmhDesktops    ( ewmh, ewmhDesktopsEventHook )
 import XMonad.Util.Run              ( spawnPipe, safeRunInTerm, hPutStrLn )
 import XMonad.Util.SpawnOnce        ( spawnOnce )
 
@@ -309,7 +310,7 @@ myManageHook = composeAll
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
 myEventHook :: Event -> X All
-myEventHook = fullscreenEventHook
+myEventHook = handleEventHook def <+> fullscreenEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -337,7 +338,7 @@ myStartupHook = pure ()--do
 ------------------------------------------------------------------------
 
 main = spawnPipe "xmobar"
-   >>= xmonad . docks . myXmonad
+   >>= xmonad . docks . ewmh . myXmonad
 
 myXmonad :: Handle -> XConfig MyLayout
 myXmonad xmproc = def

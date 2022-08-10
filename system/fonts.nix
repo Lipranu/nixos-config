@@ -8,7 +8,7 @@
       emojione
       fantasque-sans-mono
       fira-code
-      font-awesome-ttf
+      font-awesome
       google-fonts
       hack-font
       hasklig

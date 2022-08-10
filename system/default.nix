@@ -64,6 +64,8 @@
 
   };
 
+  programs.steam.enable = true;
+
   environment.systemPackages = with pkgs; [
     virtualboxWithExtpack
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ru ]))

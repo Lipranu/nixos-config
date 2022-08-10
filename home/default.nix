@@ -7,6 +7,7 @@
     ./packages.nix
     ./picom.nix
     ./xmobar.nix
+    ./vscode.nix
     (import ./emacs)
     (import ./neovim)
     (import ./ranger)

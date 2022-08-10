@@ -4,16 +4,31 @@
     package = pkgs.nixUnstable;
     extraOptions = "experimental-features = nix-command flakes";
 
-    trustedUsers = [ "root" "lipranu" ];
+    settings = {
+      trusted-users = [ "root" "lipranu" ];
 
-    binaryCaches = [
-      "https://cache.nixos.org/"
-      "https://nixcache.reflex-frp.org"
-    ];
+      substituters = [
+        "https://cache.nixos.org/"
+        "https://nixcache.reflex-frp.org"
+        "https://cache.iog.io"
+      ];
 
-    binaryCachePublicKeys = [
-      "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
-    ];
+      trusted-public-keys = [
+        "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
+        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+      ];
+    };
+#    trustedUsers = [ "root" "lipranu" ];
 
+#    binaryCaches = [
+#      "https://cache.nixos.org/"
+#      "https://nixcache.reflex-frp.org"
+#      "https://cache.iog.io"
+#    ];
+#
+#    binaryCachePublicKeys = [
+#      "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
+#      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+#    ];
   };
 }
