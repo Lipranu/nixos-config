@@ -22,5 +22,6 @@ in
     wget
     xmobar
     obsidian
+    zotero
   ];
 }
