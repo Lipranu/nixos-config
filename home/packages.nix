@@ -15,7 +15,8 @@ in
     skypeforlinux
 #    steam
     tdesktop
-    termonad-with-packages
+#    termonad-with-packages
+    termonad
     unetbootin
     unrar
     unzip
@@ -23,5 +24,6 @@ in
     xmobar
     obsidian
     zotero
+    lua-language-server
   ];
 }

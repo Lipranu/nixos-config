@@ -10,7 +10,7 @@
   time.timeZone = "Asia/Novosibirsk";
 
   boot = {
-    kernelParams = [ "intel_pstate=active" ];
+    kernelParams = [ "intel_pstate=active" "amdgpu.modeset=0"];
     supportedFilesystems = [ "ntfs" ];
 
     loader = {
@@ -23,26 +23,34 @@
 
   sound.enable = true;
 
-  nixpkgs.config = { allowUnfree = true; };
-
-  virtualisation.virtualbox.host = {
-    enable = true;
-    enableExtensionPack = true;
+  nixpkgs.config = { 
+    allowUnfree = true; 
+    permittedInsecurePackages = [
+      "electron-25.9.0"
+    ];
   };
 
-  virtualisation.virtualbox.guest.enable = true;
+  #virtualisation.virtualbox.host = {
+  #  enable = true;
+  #  enableExtensionPack = true;
+  #};
+
+  #virtualisation.virtualbox.guest.enable = true;
+  virtualisation.docker.enable = true;
 
   hardware = {
     pulseaudio.enable = true;
     sane.enable = true;
+    opengl.enable = true;
   };
 
   services = {
     printing.enable = true;
-
+    
     xserver = {
       enable = true;
       libinput.enable = true;
+#      videoDrivers = [ "amdgpu" ];
 
       displayManager = {
         defaultSession = "xsession";
@@ -64,10 +72,12 @@
 
   };
 
+  programs.nix-ld.enable = true;
   programs.steam.enable = true;
 
   environment.systemPackages = with pkgs; [
-    virtualboxWithExtpack
+#    virtualboxWithExtpack
+    docker-compose
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ru ]))
   ];
 
@@ -75,6 +85,7 @@
     isNormalUser = true;
     home = "/home/lipranu";
     extraGroups = [
+      "docker"
       "lp"
       "scanner"
       "user-with-access-to-virtualbox"

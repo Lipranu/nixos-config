@@ -14,7 +14,7 @@
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
-      ref = "nixos-21.11";
+      ref = "nixos-22.11";
     };
 
     home-manager = {

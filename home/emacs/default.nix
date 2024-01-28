@@ -22,6 +22,7 @@
         nix-mode
         nixos-options
         projectile
+        proof-general
         pdf-tools
         treemacs
         treemacs-evil

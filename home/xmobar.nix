@@ -1,6 +1,6 @@
 {
   home-manager.users.lipranu.home.file.".xmobarrc".text = ''
-    Config  { font = "xft:Iosevka:weight=bold:size=10:antialias=true"
+    Config  { font = "xft:Iosevka:weight=bold:size=8:antialias=true"
             , additionalFonts = []
             , borderColor = "#303035"
             , border = FullB

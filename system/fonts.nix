@@ -2,7 +2,7 @@
   fonts = {
     fontconfig.defaultFonts.monospace = ["Iosevka"];
     fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       dejavu_fonts
       emacs-all-the-icons-fonts
       emojione
