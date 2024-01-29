@@ -1,5 +1,6 @@
 {
   imports = [
+    ./alacritty.nix
     ./chromium.nix
     ./direnv.nix
     ./firefox.nix

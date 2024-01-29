@@ -47,7 +47,7 @@ myInformationColor = "#80BCB6"
 myUnregularColor   = "#9D81BA"
 
 myTerminal :: String
-myTerminal = "termonad"
+myTerminal = "alacritty"
 
 myFont = "xft:Iosevka:weight=bold:size=10:antialias=true"
 

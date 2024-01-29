@@ -23,8 +23,8 @@
 
   sound.enable = true;
 
-  nixpkgs.config = { 
-    allowUnfree = true; 
+  nixpkgs.config = {
+    allowUnfree = true;
     permittedInsecurePackages = [
       "electron-25.9.0"
     ];
@@ -46,7 +46,7 @@
 
   services = {
     printing.enable = true;
-    
+
     xserver = {
       enable = true;
       libinput.enable = true;
