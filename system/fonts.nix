@@ -1,8 +1,10 @@
 { pkgs, ... }: {
   fonts = {
+    fontconfig.enable = true;
     fontconfig.defaultFonts.monospace = ["Iosevka"];
     fontDir.enable = true;
     packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "Iosevka" ]; })
       dejavu_fonts
       emacs-all-the-icons-fonts
       emojione
