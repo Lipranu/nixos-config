@@ -17,7 +17,6 @@
       plugins = with pkgs.vimPlugins; [
         lualine-nvim
         nvim-web-devicons
-        neo-tree-nvim
 	      vim-nix
         vim-better-whitespace
         luasnip
@@ -40,7 +39,11 @@
           plugin = gruvbox-nvim;
           config = "colorscheme gruvbox";
         }
-
+        {
+          plugin = neo-tree-nvim;
+          type = "lua";
+          config = builtins.readFile ./plugin/neo-tree.lua;
+        }
         {
       	  plugin = lualine-nvim;
           type = "lua";
