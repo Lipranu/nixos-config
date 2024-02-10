@@ -17,9 +17,10 @@
       plugins = with pkgs.vimPlugins; [
         lualine-nvim
         nvim-web-devicons
-	      vim-nix
+        vim-nix
         vim-better-whitespace
         luasnip
+        haskell-vim
         haskell-tools-nvim
         cmp_luasnip
         cmp-nvim-lsp
@@ -47,16 +48,17 @@
         {
       	  plugin = lualine-nvim;
           type = "lua";
-	        config = "require(\"lualine\").setup()";
+          config = "require(\"lualine\").setup()";
         }
         {
           plugin = telescope-nvim;
           type = "lua";
           config = builtins.readFile ./plugin/telescope.lua;
         }
-	      {
+        {
           plugin = (nvim-treesitter.withPlugins (p: [
-            p.tree-sitter-haskell
+            #TODO: deal with tree-sitter for haskell
+            #p.tree-sitter-haskell
             p.tree-sitter-nix
             p.tree-sitter-vim
             p.tree-sitter-bash
