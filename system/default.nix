@@ -42,6 +42,7 @@
     pulseaudio.enable = true;
     sane.enable = true;
     opengl.enable = true;
+    openrazer.enable = true;
   };
 
   services = {
@@ -78,6 +79,8 @@
   environment.systemPackages = with pkgs; [
 #    virtualboxWithExtpack
     docker-compose
+    openrazer-daemon
+    polychromatic
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ru ]))
   ];
 
