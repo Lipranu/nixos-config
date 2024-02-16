@@ -15,16 +15,17 @@
       ];
 
       plugins = with pkgs.vimPlugins; [
-        lualine-nvim
-        nvim-web-devicons
-        vim-nix
-        vim-better-whitespace
-        luasnip
-        haskell-vim
-        haskell-tools-nvim
-        cmp_luasnip
         cmp-nvim-lsp
+        cmp_luasnip
+        haskell-tools-nvim
+        haskell-vim
+        lualine-nvim
+        luasnip
+        nvim-web-devicons
+        purescript-vim
         telescope-fzf-native-nvim
+        vim-better-whitespace
+        vim-nix
         which-key-nvim
         {
           plugin = nvim-lspconfig;
@@ -59,12 +60,13 @@
           plugin = (nvim-treesitter.withPlugins (p: [
             #TODO: deal with tree-sitter for haskell
             #p.tree-sitter-haskell
-            p.tree-sitter-nix
-            p.tree-sitter-vim
             p.tree-sitter-bash
-            p.tree-sitter-lua
-            p.tree-sitter-python
             p.tree-sitter-json
+            p.tree-sitter-lua
+            p.tree-sitter-nix
+            p.tree-sitter-purescript
+            p.tree-sitter-python
+            p.tree-sitter-vim
           ]));
           type = "lua";
           config = builtins.readFile ./plugin/treesitter.lua;

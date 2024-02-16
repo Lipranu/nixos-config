@@ -56,8 +56,25 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require('lspconfig').rnix.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
+  on_attach = on_attach,
+  capabilities = capabilities,
 }
 
-require'lspconfig'.elmls.setup{}
+require('lspconfig').elmls.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+}
+
+require('lspconfig').purescriptls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    purescript = {
+      formatter = "purs-tidy",
+      addSpagoSources = true
+    }
+  },
+  flags = {
+    debounce_text_changes = 150,
+  }
+}
