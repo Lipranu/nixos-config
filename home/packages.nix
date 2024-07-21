@@ -8,22 +8,26 @@ in
     crawl
     freemind
     ghostscript
+    gimp
     gnumake
     imagemagick
     libreoffice
+    lua-language-server
+    obsidian
     ranger
+    ripgrep
     skypeforlinux
-#    steam
+    sops
     tdesktop
-#    termonad-with-packages
     termonad
     unetbootin
     unrar
     unzip
     wget
+    xclip
     xmobar
-    obsidian
     zotero
-    lua-language-server
+#    steam
+#    termonad-with-packages
   ];
 }

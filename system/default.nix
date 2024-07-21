@@ -6,7 +6,7 @@
   ];
 
   system.stateVersion = "20.09";
-
+  #systemd.network.enable = true;
   time.timeZone = "Asia/Novosibirsk";
 
   boot = {

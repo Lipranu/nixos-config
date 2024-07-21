@@ -1,8 +1,9 @@
 {
   networking = {
-
+    #useNetworkd = true;
     hostName = "inspiron";
-
+    #networkmanager.enable = true;
+    #networkmanager.wifi.backend = "iwd";
     wireless = {
       enable = true;
       interfaces = [ "enp1s0" "wlp2s0" ];
