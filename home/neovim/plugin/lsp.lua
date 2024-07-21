@@ -55,6 +55,7 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+-- Rust
 require('lspconfig').rust_analyzer.setup {
   settings = {
     ['rust-analyzer'] = {},
@@ -66,11 +67,13 @@ require('lspconfig').rust_analyzer.setup {
 --  capabilities = capabilities,
 --}
 
+-- Elm
 require('lspconfig').elmls.setup{
   on_attach = on_attach,
   capabilities = capabilities,
 }
 
+-- PureScript
 require('lspconfig').purescriptls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
@@ -84,3 +87,6 @@ require('lspconfig').purescriptls.setup {
     debounce_text_changes = 150,
   }
 }
+
+-- Dhall
+require('lspconfig').dhall_lsp_server.setup{}

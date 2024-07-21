@@ -17,6 +17,7 @@
       plugins = with pkgs.vimPlugins; [
         cmp-nvim-lsp
         cmp_luasnip
+        dhall-vim
         haskell-tools-nvim
         haskell-vim
         lualine-nvim
@@ -61,6 +62,7 @@
             #TODO: deal with tree-sitter for haskell
             #p.tree-sitter-haskell
             p.tree-sitter-bash
+            p.tree-sitter-dhall
             p.tree-sitter-json
             p.tree-sitter-lua
             p.tree-sitter-nix

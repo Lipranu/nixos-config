@@ -6,6 +6,7 @@ in
   home-manager.users.lipranu.home.packages = with pkgs; [
     cachix
     crawl
+    dhall-lsp-server
     freemind
     ghostscript
     gimp
