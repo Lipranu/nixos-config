@@ -58,6 +58,11 @@
           config = builtins.readFile ./plugin/telescope.lua;
         }
         {
+          plugin = indent-blankline-nvim;
+          type = "lua";
+          config = "require(\"ibl\").setup()";
+        }
+        {
           plugin = (nvim-treesitter.withPlugins (p: [
             p.tree-sitter-bash
             p.tree-sitter-dhall
