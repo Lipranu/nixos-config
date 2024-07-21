@@ -38,8 +38,9 @@
           config = builtins.readFile ./plugin/cmp.lua;
         }
         {
-          plugin = gruvbox-nvim;
-          config = "colorscheme gruvbox";
+          plugin = onedark-nvim;
+          type = "lua";
+          config = builtins.readFile ./plugin/onedark.lua;
         }
         {
           plugin = neo-tree-nvim;
@@ -58,10 +59,9 @@
         }
         {
           plugin = (nvim-treesitter.withPlugins (p: [
-            #TODO: deal with tree-sitter for haskell
-            #p.tree-sitter-haskell
             p.tree-sitter-bash
             p.tree-sitter-dhall
+            p.tree-sitter-haskell
             p.tree-sitter-json
             p.tree-sitter-lua
             p.tree-sitter-nix
