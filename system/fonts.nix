@@ -7,7 +7,7 @@
       (nerdfonts.override { fonts = [ "Iosevka" ]; })
       dejavu_fonts
       emacs-all-the-icons-fonts
-      emojione
+#      emojione
       fantasque-sans-mono
       fira-code
       font-awesome

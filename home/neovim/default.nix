@@ -11,7 +11,7 @@
 
       extraPackages = with pkgs; [
         lua-language-server
-        rnix-lsp
+#        rnix-lsp
       ];
 
       plugins = with pkgs.vimPlugins; [

@@ -21,8 +21,6 @@
 
   console.useXkbConfig = true;
 
-  sound.enable = true;
-
   nixpkgs.config = {
     allowUnfree = true;
     permittedInsecurePackages = [
@@ -41,34 +39,34 @@
   hardware = {
     pulseaudio.enable = true;
     sane.enable = true;
-    opengl.enable = true;
+    graphics.enable = true;
     openrazer.enable = true;
   };
 
   services = {
     printing.enable = true;
 
+    libinput.enable = true;
+
+    displayManager = {
+      defaultSession = "xsession";
+
+      autoLogin = {
+        enable = true;
+        user = "lipranu";
+      };
+
+    };
+
     xserver = {
       enable = true;
-      libinput.enable = true;
-#      videoDrivers = [ "amdgpu" ];
-
       displayManager = {
-        defaultSession = "xsession";
-
 	      session = [{
 	        manage = "desktop";
 	        name = "xsession";
 	        start = "";
 	      }];
-
-        autoLogin = {
-          enable = true;
-          user = "lipranu";
-        };
-
       };
-
     };
 
   };
