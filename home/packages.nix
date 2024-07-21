@@ -5,9 +5,11 @@ in
 {
   home-manager.users.lipranu.home.packages = with pkgs; [
     cachix
+    cmake
     crawl
     dhall-lsp-server
     freemind
+    gcc
     ghostscript
     gimp
     gnumake
@@ -21,6 +23,7 @@ in
     sops
     tdesktop
     termonad
+    tree-sitter
     unetbootin
     unrar
     unzip

@@ -11,7 +11,6 @@
 
       extraPackages = with pkgs; [
         lua-language-server
-#        rnix-lsp
       ];
 
       plugins = with pkgs.vimPlugins; [
@@ -69,6 +68,7 @@
             p.tree-sitter-purescript
             p.tree-sitter-python
             p.tree-sitter-vim
+            p.tree-sitter-vimdoc
           ]));
           type = "lua";
           config = builtins.readFile ./plugin/treesitter.lua;
