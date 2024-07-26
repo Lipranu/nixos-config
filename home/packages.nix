@@ -27,6 +27,7 @@ in
     unetbootin
     unrar
     unzip
+    vesktop
     wget
     xclip
     xmobar

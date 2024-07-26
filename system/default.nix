@@ -5,12 +5,14 @@
     ./nix.nix
   ];
 
+  zramSwap.enable = true;
+
   system.stateVersion = "20.09";
   #systemd.network.enable = true;
   time.timeZone = "Asia/Novosibirsk";
 
   boot = {
-    kernelParams = [ "intel_pstate=active" "amdgpu.modeset=0"];
+    kernelParams = [ "intel_pstate=active" "amdgpu.modeset=0" ];
     supportedFilesystems = [ "ntfs" ];
 
     loader = {
@@ -37,16 +39,28 @@
   virtualisation.docker.enable = true;
 
   hardware = {
-    pulseaudio.enable = true;
+    pulseaudio.enable = false;
     sane.enable = true;
     graphics.enable = true;
     openrazer.enable = true;
   };
 
   services = {
+    dbus.implementation = "broker";
+    power-profiles-daemon.enable = false;
+    tlp.enable = true;
+    thermald.enable = true;
     printing.enable = true;
 
     libinput.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      jack.enable = true;
+    };
 
     displayManager = {
       defaultSession = "xsession";
@@ -73,6 +87,14 @@
 
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
+
+  programs.nh = {
+    enable = true;
+    clean = {
+      enable = true;
+      extraArgs = "--keep-since 30d --keep 5";
+    };
+  };
 
   environment.systemPackages = with pkgs; [
 #    virtualboxWithExtpack

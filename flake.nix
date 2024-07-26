@@ -24,6 +24,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = inputs: {
@@ -36,6 +37,10 @@
 	        (import ./home)
           (import ./hardware/inspiron.nix)
           (import ./system)
+          inputs.nixos-hardware.nixosModules.common-cpu-intel
+          inputs.nixos-hardware.nixosModules.common-gpu-amd
+          inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+          inputs.nixos-hardware.nixosModules.common-pc-laptop
 	        inputs.home-manager.nixosModules.home-manager
         ];
       };
