@@ -3,25 +3,18 @@
 
   inputs = {
 
-    nixpkgs-unstable = {
+    nixpkgs = {
       type = "github";
       owner = "nixos";
       repo = "nixpkgs";
       ref = "nixos-unstable";
     };
 
-    nixpkgs-stable = {
-      type = "github";
-      owner = "nixos";
-      repo = "nixpkgs";
-      ref = "nixos-22.11";
-    };
-
     home-manager = {
       type = "github";
       owner = "nix-community";
       repo = "home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
@@ -30,7 +23,7 @@
   outputs = inputs: {
     nixosConfigurations = {
 
-      inspiron = inputs.nixpkgs-unstable.lib.nixosSystem {
+      inspiron = inputs.nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -44,7 +37,6 @@
 	        inputs.home-manager.nixosModules.home-manager
         ];
       };
-
     };
   };
 }
