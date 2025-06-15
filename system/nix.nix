@@ -7,9 +7,9 @@
       trusted-users = [ "root" "lipranu" ];
 
       substituters = [
-        "https://cache.nixos.org/"
-        "https://nixcache.reflex-frp.org"
-        "https://cache.iog.io"
+        #"https://cache.nixos.org/"
+        #"https://nixcache.reflex-frp.org"
+        #        "https://cache.iog.io"
       ];
 
       trusted-public-keys = [
