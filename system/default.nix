@@ -39,13 +39,13 @@
   virtualisation.docker.enable = true;
 
   hardware = {
-    pulseaudio.enable = false;
     sane.enable = true;
     graphics.enable = true;
     openrazer.enable = true;
   };
 
   services = {
+    pulseaudio.enable = false;
     dbus.implementation = "broker";
     power-profiles-daemon.enable = false;
     tlp.enable = true;

@@ -16,6 +16,7 @@ in
     imagemagick
     libreoffice
     lua-language-server
+    nekoray
     obsidian
     ranger
     ripgrep
