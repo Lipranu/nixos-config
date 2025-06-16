@@ -7,8 +7,8 @@
       trusted-users = [ "root" "lipranu" ];
 
       substituters = [
-        #"https://cache.nixos.org/"
-        #"https://nixcache.reflex-frp.org"
+        "https://cache.nixos.org/"
+        "https://nixcache.reflex-frp.org"
         #        "https://cache.iog.io"
       ];
 

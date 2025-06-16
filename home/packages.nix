@@ -20,7 +20,6 @@ in
     obsidian
     ranger
     ripgrep
-    skypeforlinux
     sops
     tdesktop
     termonad
