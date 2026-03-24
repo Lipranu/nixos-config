@@ -83,10 +83,20 @@
       };
     };
 
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+      };
+    };
+
   };
 
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
+  programs.amnezia-vpn.enable = true;
+  programs.nekoray.enable = true;
 
   programs.nh = {
     enable = true;
@@ -107,6 +117,7 @@
   users.users.lipranu = {
     isNormalUser = true;
     home = "/home/lipranu";
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKR3E+G7BHhwyy2/UTAgLC5NwqEculwDRDC8Lm88cpoV lipranu@inspiron" ];
     extraGroups = [
       "docker"
       "lp"

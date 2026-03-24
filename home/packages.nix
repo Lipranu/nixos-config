@@ -4,6 +4,7 @@ let
 in
 {
   home-manager.users.lipranu.home.packages = with pkgs; [
+    btop
     cachix
     cmake
     crawl

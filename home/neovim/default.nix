@@ -26,6 +26,7 @@
         telescope-fzf-native-nvim
         vim-better-whitespace
         vim-nix
+        ron-vim
         which-key-nvim
         {
           plugin = nvim-lspconfig;

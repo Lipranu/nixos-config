@@ -24,8 +24,8 @@
       systemd.user.startServices = true;
 
       xsession.enable = true;
-
       programs = {
+        ssh.addKeysToAgent = true;
         bash.enable = true;
         feh.enable = true;
         rtorrent.enable = true;
@@ -59,11 +59,14 @@
       };
 
       services = {
+        ssh-agent.enable = true;
         lorri.enable = true;
+
         random-background = {
           enable = true;
           imageDirectory = "${xdg.userDirs.pictures}/wallpapers";
         };
+
       };
 
     };
