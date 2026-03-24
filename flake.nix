@@ -37,6 +37,20 @@
 	        inputs.home-manager.nixosModules.home-manager
         ];
       };
+
+      sapranu = inputs.nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+	        (import ./home)
+          (import ./hardware/sapranu.nix)
+          (import ./system)
+          inputs.nixos-hardware.nixosModules.common-cpu-amd
+          inputs.nixos-hardware.nixosModules.common-gpu-amd
+          inputs.nixos-hardware.nixosModules.common-pc-ssd
+	        inputs.home-manager.nixosModules.home-manager
+        ];
+      };
     };
   };
 }

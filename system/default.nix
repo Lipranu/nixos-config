@@ -12,8 +12,8 @@
   time.timeZone = "Asia/Novosibirsk";
 
   boot = {
-    kernelParams = [ "intel_pstate=active" "amdgpu.modeset=0" ];
-    supportedFilesystems = [ "ntfs" ];
+    #    kernelParams = [ "intel_pstate=active" "amdgpu.modeset=0" ];
+    #    supportedFilesystems = [ "ntfs" ];
 
     loader = {
       systemd-boot.enable = true;
@@ -25,9 +25,9 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "electron-25.9.0"
-    ];
+    #permittedInsecurePackages = [
+    #  "electron-25.9.0"
+    #];
   };
 
   #virtualisation.virtualbox.host = {

@@ -2,7 +2,7 @@
   networking = {
     #useNetworkd = true;
     hostName = "inspiron";
-    #networkmanager.enable = true;
+    networkmanager.enable = true;
     #networkmanager.wifi.backend = "iwd";
     wireless = {
       enable = true;

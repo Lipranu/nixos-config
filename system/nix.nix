@@ -8,7 +8,7 @@
 
       substituters = [
         "https://cache.nixos.org/"
-        "https://nixcache.reflex-frp.org"
+        #        "https://nixcache.reflex-frp.org"
         #        "https://cache.iog.io"
       ];
 
