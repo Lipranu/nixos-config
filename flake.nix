@@ -18,6 +18,7 @@
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    trcc-linux.url = "github:Lexonight1/thermalright-trcc-linux";
   };
 
   outputs = inputs: {
@@ -49,6 +50,7 @@
           inputs.nixos-hardware.nixosModules.common-gpu-amd
           inputs.nixos-hardware.nixosModules.common-pc-ssd
 	        inputs.home-manager.nixosModules.home-manager
+          inputs.trcc-linux.nixosModules.default
         ];
       };
     };

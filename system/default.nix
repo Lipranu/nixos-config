@@ -51,6 +51,7 @@
     tlp.enable = true;
     thermald.enable = true;
     printing.enable = true;
+    #    envfs.enable = true;
 
     libinput.enable = true;
 
@@ -97,6 +98,7 @@
   programs.steam.enable = true;
   programs.amnezia-vpn.enable = true;
   programs.nekoray.enable = true;
+  #programs.trcc-linux.enable = true;
 
   programs.nh = {
     enable = true;
@@ -108,11 +110,22 @@
 
   environment.systemPackages = with pkgs; [
 #    virtualboxWithExtpack
+    bash
     docker-compose
     openrazer-daemon
     polychromatic
     (aspellWithDicts (dicts: with dicts; [ en en-computers en-science ru ]))
   ];
+
+  system.activationScripts.binbash = {
+    # Ensure this script runs after /bin/sh is available
+    deps = [ "binsh" ];
+    text = ''
+      mkdir -p /bin
+      # Create a symlink to the default system shell (which is Bash in NixOS)
+      ln -sfn ${pkgs.bash}/bin/bash /bin/bash
+    '';
+  };
 
   users.users.lipranu = {
     isNormalUser = true;
@@ -125,6 +138,7 @@
       "user-with-access-to-virtualbox"
       "vboxusers"
       "wheel"
+      "networkmanager"
     ];
   };
 

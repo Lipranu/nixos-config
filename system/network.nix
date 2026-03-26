@@ -3,7 +3,7 @@
     #useNetworkd = true;
     hostName = "sapranu";
     networkmanager.enable = true;
-    #networkmanager.wifi.backend = "iwd";
+    networkmanager.wifi.backend = "iwd";
     #wireless = {
     #  enable = true;
     #  interfaces = [ "enp1s0" "wlp2s0" ];
@@ -14,10 +14,10 @@
     #  };
     #};
 
-    interfaces = {
-      enp1s0.useDHCP = true;
-      wlp2s0.useDHCP = true;
-    };
+    #interfaces = {
+    #  enp1s0.useDHCP = true;
+    #  wlp2s0.useDHCP = true;
+    #};
 
   };
 }
